@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon } from '@heroicons/react/solid';
 import { FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logosem.png'; 
 
