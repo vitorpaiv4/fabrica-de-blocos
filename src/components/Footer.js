@@ -1,5 +1,5 @@
 import React from 'react';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/solid';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Footer() {
