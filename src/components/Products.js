@@ -10,7 +10,7 @@ import ProductCard from './ProductCard';
 const products = [
   {
     id: 1,
-    title: 'Bloco Estrutural 19x19x39',
+    title: 'Bloco Estrutural 19',
     description: 'Tamanho: 19cm x 19cm x 39cm',
     price: 'R$6,80',
     oldPrice: 'R$7,50',
@@ -18,7 +18,7 @@ const products = [
   },
   {
     id: 2,
-    title: 'Bloco Estrutural 14x19x39',
+    title: 'Bloco Estrutural 14',
     description: 'Tamanho: 14cm x 19cm x 39cm',
     price: 'R$4,95',
     oldPrice: 'R$5,50',
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 3,
-    title: 'Bloco de Vedação 9x19x39',
+    title: 'Bloco de Vedação 9',
     description: 'Tamanho: 9cm x 19cm x 39cm',
     price: 'R$3,40',
     oldPrice: 'R$4,00',
@@ -34,7 +34,7 @@ const products = [
   },
   {
     id: 4,
-    title: 'Bloco de Vedação 14x19x39',
+    title: 'Bloco de Vedação 14',
     description: 'Tamanho: 14cm x 19cm x 39cm',
     price: 'R$4,30',
     oldPrice: 'R$4,80',
@@ -42,7 +42,7 @@ const products = [
   },
   {
     id: 5,
-    title: 'Meio Bloco 14x19x19',
+    title: 'Meio Bloco 14',
     description: 'Tamanho: 14cm x 19cm x 19cm',
     price: 'R$2,50',
     oldPrice: 'R$3,00',
@@ -50,7 +50,7 @@ const products = [
   },
   {
     id: 6,
-    title: 'Meio Bloco 9x19x19',
+    title: 'Meio Bloco 9',
     description: 'Tamanho: 9cm x 19cm x 19cm',
     price: 'R$2,00',
     oldPrice: 'R$2,50',
@@ -58,7 +58,7 @@ const products = [
   },
   {
     id: 7,
-    title: 'Canaleta 9x19x39',
+    title: 'Canaleta 9',
     description: 'Tamanho: 9cm x 19cm x 39cm',
     price: 'R$4,60',
     oldPrice: 'R$5,00',
@@ -66,7 +66,7 @@ const products = [
   },
   {
     id: 8,
-    title: 'Canaleta 14x19x39',
+    title: 'Canaleta 14',
     description: 'Tamanho: 14cm x 19cm x 39cm',
     price: 'R$5,50',
     oldPrice: 'R$6,00',
