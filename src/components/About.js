@@ -7,6 +7,8 @@ import exemple1 from '../assets/exemple1.jpg';
 import exemple2 from '../assets/exemple2.jpg';
 import exemple3 from '../assets/exemple3.png';
 
+
+
 function About() {
   const settings = {
     dots: true,
@@ -24,6 +26,7 @@ function About() {
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl font-bold mb-6">Qualidade e Inovação em Cada Bloco</h2>
           <p className="text-lg mb-12">Nossa fábrica tem anos de experiência no mercado, comprometida com a qualidade e a inovação nos processos de produção.</p>
+                
         </div>
         <div className="w-full md:w-1/2 flex justify-end">
           <div className="w-full md:w-1/2">

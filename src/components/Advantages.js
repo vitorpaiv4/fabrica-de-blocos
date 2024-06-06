@@ -1,5 +1,7 @@
 import React from 'react';
 import { CheckCircleIcon } from '@heroicons/react/solid';
+import ilustracao from '../assets/ilustracao1.png';
+
 
 function Advantages() {
   const advantages = [
@@ -10,9 +12,11 @@ function Advantages() {
   ];
 
   return (
+
     <div className="py-20 bg-gray-100">
       <div className="container mx-auto text-center px-4 md:px-8 lg:px-16">
         <h2 className="text-3xl font-bold mb-6 sm:text-4xl md:text-5xl">Por Que Escolher Nossos Blocos de Concreto?</h2>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {advantages.map((advantage) => (
             <div key={advantage.id} className="flex items-center text-left sm:text-center">
@@ -22,9 +26,12 @@ function Advantages() {
                 <p className="text-sm sm:text-base md:text-lg">{advantage.description}</p>
               </div>
             </div>
+               
           ))}
         </div>
-      </div>
+      </div><div>
+            <img src={ilustracao} alt="Imagem 1" className=""/>
+          </div> 
     </div>
   );
 }
