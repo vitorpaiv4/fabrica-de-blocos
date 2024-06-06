@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <div className="bg-gray-800 text-white py-6">
+<div className="bg-[#003366] text-white py-6">
       <div className="container mx-auto text-center px-4 md:px-8 lg:px-16">
         <div className="mb-4">
           <h4 className="text-lg font-bold sm:text-xl md:text-2xl">Norte Blocos</h4>
