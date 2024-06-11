@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ShoppingCartIcon } from '@heroicons/react/outline';
+import { CartProvider, useCart } from './components/CartContext';
 import Hero from './components/Hero';
 import About from './components/About';
 import Products from './components/Products';
@@ -9,24 +11,34 @@ import Footer from './components/Footer';
 import CartPage from './components/CartPage';
 
 function App() {
-  const [view, setView] = useState('home');  // Define o estado aqui
+  const [view, setView] = useState('home');
+  const { state } = useCart(); // Usando o hook useCart para acessar o estado do carrinho
 
   return (
-    <div className="App">
-      {view === 'home' ? (
-        <>
-          <Hero />
-          <About />
-          <Products setView={setView} />  // Passa setView como prop para Products
-          <Advantages />
-          <Testimonials />
-          <Contact />
-          <Footer />
-        </>
-      ) : (
-        <CartPage setView={setView} />
-      )}
-    </div>
+    <CartProvider>
+      <div className="App">
+        {view === 'home' ? (
+          <>
+            <Hero />
+            <About />
+            <Products setView={setView} />
+            <Advantages />
+            <Testimonials />
+            <Contact />
+            <Footer />
+            <button 
+              onClick={() => setView('cart')} 
+              className="fixed bottom-10 right-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 z-50"
+            >
+              <ShoppingCartIcon className="h-6 w-6" />
+              <span>Carrinho ({state.items.length})</span>
+            </button>
+          </>
+        ) : (
+          <CartPage setView={setView} />
+        )}
+      </div>
+    </CartProvider>
   );
 }
 
