@@ -90,7 +90,7 @@ const products = [
   }
 ];
 
-function Products() {
+function Products({ setView }) {  // Assegure que setView está sendo recebido como prop
   const settings = {
     dots: true,
     infinite: false,
@@ -122,18 +122,21 @@ function Products() {
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">Nossos Produtos</h2>
         <Slider {...settings}>
-          {products.map((product) => (
+          {products.map(product => (
             <div key={product.id} className="p-4">
               <ProductCard
                 title={product.title}
                 description={product.description}
                 price={product.price}
                 oldPrice={product.oldPrice}
-                // image={product.image}
+                // image={product.image} // Descomente quando tiver as imagens
               />
             </div>
           ))}
         </Slider>
+        <button onClick={() => setView('cart')} className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Ver Carrinho
+        </button>
       </div>
     </div>
   );
