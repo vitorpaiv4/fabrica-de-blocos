@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import ProductCard from './ProductCard';
 
-// Certifique-se de importar as imagens corretas, se estiverem disponíveis
+// Certifique-se de importar as imagens corretas
 // import productImage1 from '../path/to/productImage1.jpg';
 // import productImage2 from '../path/to/productImage2.jpg';
 // import productImage3 from '../path/to/productImage3.jpg';
@@ -109,7 +109,7 @@ function Products({ setView }) {
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -121,10 +121,10 @@ function Products({ setView }) {
   return (
     <div className="py-20">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Nossos Produtos</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Nossos Produtos</h2>
         <Slider {...settings}>
           {products.map((product) => (
-            <div key={product.id} className="p-4">
+            <div key={product.id} className="p-2 sm:p-4 lg:p-6">
               <ProductCard
                 id={product.id}
                 title={product.title}

@@ -2,9 +2,9 @@ import React from 'react';
 
 function Testimonials() {
   const testimonials = [
-    { id: 1, name: 'Cliente 1', quote: 'Os blocos são de excelente qualidade e o atendimento é ótimo.' },
-    { id: 2, name: 'Cliente 2', quote: 'Recomendo a Norte Blocos pela durabilidade dos produtos.' },
-    { id: 3, name: 'Cliente 3', quote: 'Muito satisfeito com os blocos e o suporte técnico.' },
+    { id: 1, name: 'Afonso', quote: 'Os blocos são de excelente qualidade e o atendimento é ótimo.' },
+    { id: 2, name: 'João', quote: 'Recomendo a Norte Blocos pela durabilidade dos produtos.' },
+    { id: 3, name: 'Fernanda', quote: 'Muito satisfeito com os blocos e o suporte técnico.' },
   ];
 
   return (

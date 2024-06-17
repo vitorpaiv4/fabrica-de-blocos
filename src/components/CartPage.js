@@ -12,7 +12,7 @@ function CartPage({ setView }) {
   };
 
   const formatCurrency = (value) => {
-    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    return `R$ ${parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
   };
 
   const getTotalPrice = () => {
@@ -43,15 +43,15 @@ function CartPage({ setView }) {
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">Carrinho de Compras</h2>
+    <div className="container mx-auto mt-8 p-4 sm:p-8 lg:p-12">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Carrinho de Compras</h2>
       {state.items.length > 0 ? (
         <>
           {state.items.map(item => (
             <CartItem key={item.id} item={item} />
           ))}
           <div className="mt-4">
-            <h3 className="text-xl font-bold">Total: {formatCurrency(parseFloat(getTotalPrice()))}</h3>
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">Total: {formatCurrency(parseFloat(getTotalPrice()))}</h3>
             <div className="mt-4">
               <label className="block mb-2">Nome:</label>
               <input
