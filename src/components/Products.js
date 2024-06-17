@@ -36,7 +36,7 @@ const products = [
     id: 4,
     title: 'Bloco de Vedação 14',
     description: 'Tamanho: 14cm x 19cm x 39cm',
-    price: 'R4,30',
+    price: '4,30',
     oldPrice: '4,80',
     // image: productImage1,
   },
