@@ -11,6 +11,10 @@ function CartPage({ setView }) {
     dispatch({ type: 'UPDATE_CONTACT_INFO', payload: { [name]: value } });
   };
 
+  const formatCurrency = (value) => {
+    return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  };
+
   const getTotalPrice = () => {
     const subtotal = state.items.reduce((total, item) => total + item.price * item.qty, 0);
     const paymentMethod = state.contactInfo.paymentMethod;
@@ -21,7 +25,7 @@ function CartPage({ setView }) {
   const handleCheckout = () => {
     const contactInfo = state.contactInfo;
     const message = state.items.map(item => 
-      `*${item.title}* - Quantidade: ${item.qty} - Total: R$${(item.price * item.qty).toFixed(2)}`
+      `*${item.title}* - Quantidade: ${item.qty} - Total: ${formatCurrency(item.price * item.qty)}`
     ).join('%0A');
 
     const totalPrice = getTotalPrice();
@@ -30,11 +34,11 @@ function CartPage({ setView }) {
       Telefone: ${contactInfo.phone}
       Endereço: ${contactInfo.address}, ${contactInfo.neighborhood}, ${contactInfo.city} - ${contactInfo.zip}
       Forma de Pagamento: ${contactInfo.paymentMethod}
-      Total (com desconto, se aplicável): R$${totalPrice}
+      Total (com desconto, se aplicável): ${formatCurrency(totalPrice)}
       Taxa de Entrega: A ser discutida
     `;
 
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=5569993373982&text=${encodeURIComponent(message)}%0A%0ATotal: R$${totalPrice}%0A%0A${encodeURIComponent(contactDetails)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5569993373982&text=${encodeURIComponent(message)}%0A%0ATotal: ${formatCurrency(totalPrice)}%0A%0A${encodeURIComponent(contactDetails)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -47,7 +51,7 @@ function CartPage({ setView }) {
             <CartItem key={item.id} item={item} />
           ))}
           <div className="mt-4">
-            <h3 className="text-xl font-bold">Total: R${getTotalPrice()}</h3>
+            <h3 className="text-xl font-bold">Total: {formatCurrency(parseFloat(getTotalPrice()))}</h3>
             <div className="mt-4">
               <label className="block mb-2">Nome:</label>
               <input

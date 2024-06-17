@@ -12,7 +12,7 @@ const initialState = {
     neighborhood: '',
     city: '',
     zip: '',
-    paymentMethod: 'Cartão de Crédito', // Default payment method
+    paymentMethod: '', 
   }
 };
 
