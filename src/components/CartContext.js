@@ -4,7 +4,16 @@ import React, { createContext, useContext, useReducer } from 'react';
 const CartContext = createContext();
 
 const initialState = {
-  items: []
+  items: [],
+  contactInfo: {
+    name: '',
+    phone: '',
+    address: '',
+    neighborhood: '',
+    city: '',
+    zip: '',
+    paymentMethod: 'Cartão de Crédito', // Default payment method
+  }
 };
 
 const cartReducer = (state, action) => {
@@ -12,13 +21,11 @@ const cartReducer = (state, action) => {
     case 'ADD_ITEM':
       const existingItemIndex = state.items.findIndex(item => item.id === action.payload.id);
       if (existingItemIndex >= 0) {
-        // Atualiza a quantidade se o item já estiver no carrinho
         const updatedItems = state.items.map((item, index) =>
           index === existingItemIndex ? { ...item, qty: item.qty + 1 } : item
         );
         return { ...state, items: updatedItems };
       } else {
-        // Adiciona um novo item ao carrinho
         return { ...state, items: [...state.items, { ...action.payload, qty: 1 }] };
       }
     case 'REMOVE_ITEM':
@@ -36,6 +43,11 @@ const cartReducer = (state, action) => {
         items: state.items.map(item =>
           item.id === action.payload.id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
         )
+      };
+    case 'UPDATE_CONTACT_INFO':
+      return {
+        ...state,
+        contactInfo: { ...state.contactInfo, ...action.payload }
       };
     default:
       return state;
