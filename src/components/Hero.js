@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRightIcon } from '@heroicons/react/solid';
 import { FaWhatsapp } from 'react-icons/fa';
-import logo from '../assets/novalogo.png'; 
+import logo from '../assets/logo.png'; 
 
 function Hero() {
   return (

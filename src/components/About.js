@@ -1,13 +1,11 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import exemple1 from '../assets/exemple1.jpg';
-import exemple2 from '../assets/exemple2.jpg';
-import exemple3 from '../assets/exemple3.png';
-
-
+import image1 from '../assets/product3.png';
+import image2 from '../assets/product1.png';
+import image3 from '../assets/blocks1.png';
 
 function About() {
   const settings = {
@@ -17,33 +15,46 @@ function About() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
+    arrows: false,
   };
 
   return (
-    <div className="py-20 bg-gray-100">
-      <div className="container mx-auto flex flex-wrap items-center">
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl font-bold mb-6">Qualidade e Inovação em Cada Bloco</h2>
-          <p className="text-lg mb-12">Nossa fábrica tem anos de experiência no mercado, comprometida com a qualidade e a inovação nos processos de produção.</p>
-                
-        </div>
-        <div className="w-full md:w-1/2 flex justify-end">
-          <div className="w-full md:w-1/2">
-            <Slider {...settings}>
-              <div>
-                <img src={exemple1} alt="Imagem 1" className="w-full h-auto"/>
+    <div className="relative py-20 bg-gray-100">
+      <Slider {...settings}>
+        {[image1, image2, image3].map((image, index) => (
+          <div key={index} className="relative w-full h-[500px]">
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="container mx-auto text-center md:text-left text-white">
+                {index === 0 && (
+                  <>
+                    <h2 className="text-3xl font-bold mb-6">Qualidade e Inovação em Cada Bloco</h2>
+                    <p className="text-lg mb-12">Nossa fábrica tem anos de experiência no mercado, comprometida com a qualidade e a inovação nos processos de produção.</p>
+                  </>
+                )}
+                {index === 1 && (
+                  <>
+                    <h2 className="text-3xl font-bold mb-6">Compromisso com a Excelência</h2>
+                    <p className="text-lg mb-12">Produzindo blocos de alta qualidade para construções duráveis e seguras.</p>
+                  </>
+                )}
+                {index === 2 && (
+                  <>
+                    <h2 className="text-3xl font-bold mb-6">Inovação Constante</h2>
+                    <p className="text-lg mb-12">Investindo continuamente em tecnologia para aprimorar nossos produtos.</p>
+                  </>
+                )}
               </div>
-              <div>
-                <img src={exemple2} alt="Imagem 2" className="w-full h-auto"/>
-              </div>
-              <div>
-                <img src={exemple3} alt="Imagem 3" className="w-full h-auto"/>
-              </div>
-            </Slider>
+            </div>
           </div>
-        </div>
-      </div>
+        ))}
+      </Slider>
     </div>
   );
 }
