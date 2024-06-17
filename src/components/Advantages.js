@@ -1,6 +1,5 @@
 import React from 'react';
 import { CheckCircleIcon } from '@heroicons/react/solid';
-import ilustracao from '../assets/ilustracao1.png';
 
 
 function Advantages() {
@@ -29,9 +28,7 @@ function Advantages() {
                
           ))}
         </div>
-      </div><div>
-            <img src={ilustracao} alt="Imagem 1" className=""/>
-          </div> 
+      </div>
     </div>
   );
 }

@@ -1,6 +1,20 @@
+/* index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
+/* Garantir que não haja overflow horizontal */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Assegurar que todos os elementos se ajustem ao contêiner pai */
+* {
+  box-sizing: border-box; /* Inclui padding e border na largura e altura total do elemento */
+}

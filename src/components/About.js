@@ -29,25 +29,36 @@ function About() {
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="container mx-auto text-center md:text-left text-white">
+              <div className="container mx-auto text-center text-white px-4 md:px-8 lg:px-16">
                 {index === 0 && (
                   <>
-                    <h2 className="text-3xl font-bold mb-6">Qualidade e Inovação em Cada Bloco</h2>
-                    <p className="text-lg mb-12">Nossa fábrica tem anos de experiência no mercado, comprometida com a qualidade e a inovação nos processos de produção.</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                      Qualidade e Inovação em Cada Bloco
+                    </h2>
+                    <p className="text-lg sm:text-xl md:text-2xl mb-12">
+                      Nossa fábrica tem anos de experiência no mercado, comprometida com a qualidade e a inovação nos processos de produção.
+                    </p>
                   </>
                 )}
                 {index === 1 && (
                   <>
-                    <h2 className="text-3xl font-bold mb-6">Compromisso com a Excelência</h2>
-                    <p className="text-lg mb-12">Produzindo blocos de alta qualidade para construções duráveis e seguras.</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                      Compromisso com a Excelência
+                    </h2>
+                    <p className="text-lg sm:text-xl md:text-2xl mb-12">
+                      Produzindo blocos de alta qualidade para construções duráveis e seguras.
+                    </p>
                   </>
                 )}
                 {index === 2 && (
                   <>
-                    <h2 className="text-3xl font-bold mb-6">Inovação Constante</h2>
-                    <p className="text-lg mb-12">Investindo continuamente em tecnologia para aprimorar nossos produtos.</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                      Inovação Constante
+                    </h2>
+                    <p className="text-lg sm:text-xl md:text-2xl mb-12">
+                      Investindo continuamente em tecnologia para aprimorar nossos produtos.
+                    </p>
                   </>
                 )}
               </div>

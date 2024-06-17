@@ -6,7 +6,6 @@ import About from './components/About';
 import Products from './components/Products';
 import Advantages from './components/Advantages';
 import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CartPage from './components/CartPage';
 
@@ -24,7 +23,6 @@ function App() {
             <Products setView={setView} />
             <Advantages />
             <Testimonials />
-            <Contact />
             <Footer />
             <button 
               onClick={() => setView('cart')} 
